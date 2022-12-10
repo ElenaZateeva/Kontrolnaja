@@ -4,20 +4,22 @@ Console.WriteLine("Исходный массив слов:");
 string[] strArray = new string[] { "alfa", "min", "betta", "gamma", "max", "delta", "sigma", "lda", "ert", "ql", "col" };
 
 PrintArray(strArray);
-string str = Vibor(strArray);
-Console.WriteLine(str);
+string[] strArray2 = Vibor(strArray);
+PrintArray(strArray2);
 
-string Vibor(string[] array)
+string[] Vibor(string[] array)
 {
-    string stroka = string.Empty;
+    string[] array2 = new string[array.Length];
+    int j = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length < 4)
         {
-            stroka = stroka + " "+array[i];
+            array2[j] = array[i];
+            j++;
         }
     }
-    return stroka;
+    return array2;
 }
 
 
